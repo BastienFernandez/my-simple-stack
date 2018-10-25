@@ -20,19 +20,15 @@ public class MyStack implements  SimpleStack{
     }
 
     public Item peek() throws EmptyStackException {
-        /*try {
-            stack.get(0);
-        } catch (EmptyStackException e) {
-            //throw new EmptyStackException();
-        }*/
-        return stack.get(0);
+        int size = stack.size();
+        return stack.get(size - 1);
     }
 
     public Item pop() throws EmptyStackException {
         int size = stack.size();
-        Item item = stack.get(size);
+        Item item = stack.get(size - 1);
 
-        stack.remove(size);
+        stack.remove(size - 1);
         return item;
     }
 }
